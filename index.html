@@ -11,18 +11,25 @@
 </head>
 <body>
     <nav>
-        <a href="#" class="navLink">Home</a>
-        <a href="#" class="navLink">Order</a>
-        <a href="#" class="navLink">Food</a>
-        <a href="#" class="navLink">Restaurant</a>
-        <a href="#" class="navLink">Tesimonials</a>
-        <a href="#" class="navLink">Contact Us</a>
-        <a href="#" class="navLink">
+        <a href="#" class="navLink homeButton">Home</a>
+        <a href="#" class="navLink navLink-desktop">Order</a>
+        <a href="#" class="navLink navLink-desktop">Food</a>
+        <a href="#" class="navLink navLink-desktop">Restaurant</a>
+        <a href="#" class="navLink navLink-desktop">Tesimonials</a>
+        <a href="#" class="navLink navLink-desktop">Contact Us</a>
+        <a href="#" class="navLink " id="menuButton">
             <img src="./assets/menu-bar.png" />
         </a>
+        <div id="navList-mobile">
+            <a href="#" class="navLink navLink-mobile">Order</a>
+            <a href="#" class="navLink navLink-mobile">Food</a>
+            <a href="#" class="navLink navLink-mobile">Restaurant</a>
+            <a href="#" class="navLink navLink-mobile">Tesimonials</a>
+            <a href="#" class="navLink navLink-mobile">Contact Us</a>
+        </div>
     </nav>
-    <section class="home">
-        <section class="homeText">
+    <div class="home">
+        <div class="homeText">
             <h1>Lorem Ipsum</h1>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
@@ -33,32 +40,48 @@
                 Sed pulvinar, massa ac porta viverra.
             </p>
             <button>Click Me</button>
-        </section>
-        <section class="homeBackground"></section>
-    </section>
-    <section class="imageSection">
-        <section class="gridWrapper">
-            <section class="imgGrid">
-                <section class="gridCol gridCol1">
+        </div>
+        <div class="homeBackground"></div>
+    </div>
+    <div class="imageSection">
+        <div class="gridWrapper">
+            <div class="imgGrid">
+                <div class="gridCol gridCol1">
                     <span class="imageSpan img1"></span>
                     <span class="imageSpan img2"></span>
-                </section>
-                <section class="gridCol gridCol2">
+                </div>
+                <div class="gridCol gridCol2">
                     <span class="imageSpan img3"></span>
-                </section>
-            </section>
+                </div>
+            </div>
             
-        </section>
-        <section class="imageSectionText">
-            <section class="bigButton">
+        </div>
+        <div class="imageSectionText">
+            <div class="bigButton">
                 <span>LOREM IPSUM</span>
                 <h2>LOREM IPSUM SET ADEMIR</h2>
                 <button>
                     <span>Click</span>
                     <img src="./assets/icons8-arrow-30.png" />
                 </button>
-            </section>
-        </section>
-    </section>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const menuButton = document.getElementById("menuButton");
+        const navList = document.getElementById("navList-mobile");
+
+        menuButton.addEventListener("click", ()=> {
+            if(navList.classList.contains("displayList")){
+                navList.classList.remove("displayList");
+                navList.classList.add("hideList");
+            }
+            else{
+                navList.classList.add("displayList");
+                navList.classList.remove("hideList");
+            }
+        })
+    </script>
 </body>
 </html>

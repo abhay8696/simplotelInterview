@@ -7,6 +7,7 @@ nav{
     background-color: #ff7171;
     flex-wrap: wrap;
     height: 75px;
+    position: relative;
 }
 .navLink{
     font-weight: 900;
@@ -17,10 +18,31 @@ nav{
     color: black;
     letter-spacing: 4px;
 }
+#navList-mobile{
+    position: absolute;
+    top: 75px;
+    background-color: #ff7171;
+    width: 100vw;
+    z-index: 10;
+    flex-direction: column;
+}
+.displayList{
+    display: flex;
+}
+.hideList{
+    display: none;
+}
 
 nav img{
     max-height: 3rem;
 }
+
+@media only screen and (min-width: 900px)  {
+    #navList-mobile{
+        display: none;
+    }
+}
+
 @media only screen and (max-width: 1200px) and (min-width: 900px)  {
     nav{
         gap: 0.75rem;
@@ -36,10 +58,14 @@ nav img{
 @media only screen and (max-width: 900px)  {
     nav{
         gap: 0.75rem;
+        justify-content: space-between;
     }
     .navLink{
         font-size: 1.25rem;
         padding: 0.5rem 0.75rem;
+    }
+    .navLink-desktop{
+        display: none;
     }
     nav img{
         max-height: 3rem;
